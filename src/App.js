@@ -10,6 +10,7 @@ import { auth } from './app/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from "./features/userSlice";
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
   const user = useSelector(selectUser);
@@ -24,18 +25,19 @@ function App() {
         }));
       } else {
         //Logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
     return unsubscribe;
-  }, [])
+  }, [dispatch])
+
   return (
     <div className="App">
       {!user ? (<LoginScreen />) : (
         <Router>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
-
+            <Route path="/profile" element={<ProfileScreen />} />
           </Routes>
         </Router>
       )}

@@ -9,7 +9,7 @@ const LoginScreen = () => {
     <div className='loginScreen'>
       <div className="loginScreen__background">
         <img className="loginScreen__logo" src="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo.png" alt="" />
-        <button className="loginScreen__button">Sign In</button>
+        <button className="loginScreen__button" onClick={() => setSignIn(true)}>Sign In</button>
         <div className="loginScreen__gradient" />
       </div>
       <div className="loginScreen__body">

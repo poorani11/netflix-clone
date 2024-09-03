@@ -21,6 +21,6 @@ const defaultFirestore = getFirestore(defaultApp);
 export {
     defaultApp as app, // these are class instances
     defaultAuth as auth,
-    defaultFirestore as firestore // i.e. you can't use firestore.doc(), import it using `import { doc } from "firebase/firestore"` and then call `doc(firestore, ...)`
+    defaultFirestore as db // i.e. you can't use firestore.doc(), import it using `import { doc } from "firebase/firestore"` and then call `doc(firestore, ...)`
 }
 
